@@ -1,0 +1,380 @@
+@keyframes rotatingCube {
+    from{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes changeperspective 
+{
+    0% {
+        perspective: 10000px;
+    }
+    50% {
+        perspective: 5000px ;
+    }
+    100% {
+        perspective: 8000px ;
+    }
+
+}
+
+@keyframes rosaceAnim 
+{
+    from
+    {
+        transform: rotateX(0deg); 
+    }
+    to 
+    {
+        transform: rotateX(85deg); 
+    }
+}
+
+/* BODY CSS*/
+
+body 
+{
+    background: #202020;
+    width: 100%;
+    height: 100%;
+    perspective: 10000px;
+    perspective-origin: 0px 00px; 
+    position: relative;
+}
+
+body .instructions
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 400px;
+    height: 650px;
+    border: solid;
+    border-width: 5px;
+    border-color: #08F8F8;
+    text-align: center;
+}
+body .instructions h1
+{
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 36px;
+}
+body .instructions h2
+{
+    color: white;
+    font-family: "Galiver Sans";
+    font-size: 30px;
+}
+
+body .instructions ul 
+{
+    text-align: left;
+}
+
+body .instructions li
+{
+    font-family: "Galiver Sans";
+    color: white;
+    font-size: 20px;
+    margin-top: 6px;
+    list-style-type: square;
+    margin-left: 10px;
+}
+body .instructions .second
+{
+    position: relative;
+    top: 25px;
+}
+
+body.launchPerspective
+{
+    animation: changeperspective 15s infinite;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+}
+
+body .rosace
+{
+    position: absolute;
+    top: 25rem;
+    left: 50%;
+    /* border: solid;
+    border-width: 0.1rem;
+    border-color: cadetblue; */
+    width: 20rem;
+    height: 20rem;
+    transform-style: preserve-3d;
+    /* transform: rotateX(45deg); */
+}
+
+body .rosace.rosaceAnim 
+{
+    animation: rosaceAnim 15s infinite;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+body .launchRosaceAnimation
+{
+    animation: rosaceAnim 15s infinite;
+    animation-delay: 5s;
+    animation-timing-function: ease-in-out;
+}
+
+ 
+body .rosace :first-child
+{   
+    transform:translateZ(50px);
+}
+body .rosace :nth-child(2)
+{
+    transform:translateZ(100px);
+}
+body .rosace :nth-child(3)
+{
+    transform:translateZ(150px);
+}
+body .rosace :nth-child(4)
+{
+    transform:translateZ(200px);
+}
+body .rosace :nth-child(5)
+{
+    transform:translateZ(250px);
+}
+body .rosace :nth-child(6)
+{
+    transform:translateZ(300px);
+}
+body .rosace :nth-child(7)
+{
+    transform:translateZ(350px);
+}
+body .rosace :nth-child(8)
+{
+    transform:translateZ(400px);
+}
+body .rosace :nth-child(9)
+{
+    transform:translateZ(450px);
+}
+body .rosace :nth-child(10)
+{
+    transform:translateZ(500px);
+}
+
+
+
+
+body .rosace .shape div
+{
+    transform-style: preserve-3d;
+    display: inline-block;
+    border: solid;
+    border-width: 0.3rem;
+    border-color: ivory;
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* width: 0;
+    height: 0;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 30px solid #cade; */
+}
+
+body .rosace .animate div
+{
+    animation: rotatingCube 5s linear infinite;
+    animation-delay: 000ms;
+}
+body .rosace .triangle div
+{
+    width: 0;
+    height: 0;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 30px solid #cade;
+
+}
+body .rosace .itemNewTranslate
+{
+transform:translateZ(-10px);
+}
+body .rosace .positionZ .itemNew
+{
+    animation: rotating 5s linear infinite;
+    transition-timing-function:ease-in-out;
+    transform: translateZ(20px);
+    transform-style: preserve-3d;
+    display: inline-block;
+    border: solid;
+    border-width: 0.3rem;
+    border-color: ivory;
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+body .rosace .item-1
+{
+    position: absolute;
+    /* transform: rotateZ(3600deg);
+    transition: transform 10s; */
+    transform-style: preserve-3d;
+    /* Il y a moyen de jouer avec ca  */
+    /* transform: scale3d(2, 1.7, 1.5); */
+}
+body .rosace .item-1.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 000ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+.selected
+{
+    border-color: cadetblue;
+}
+
+body .rosace .item-2
+{
+    position: absolute;
+    transform-style: preserve-3d;
+}
+body .rosace .item-2.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 200ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body .rosace .item-3
+{
+    position: absolute;
+    transform-style: preserve-3d;
+
+}
+body .rosace .item-3.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 400ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body .rosace .item-4
+{
+    position: absolute;
+    transform-style: preserve-3D;
+}
+body .rosace .item-4.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 600ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body .rosace .item-5
+{
+    position: absolute;
+    transform-style: preserve-3D;
+}
+body .rosace .item-5.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 800ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body .rosace .item-6
+{
+    position: absolute;
+    transform-style: preserve-3D;
+}
+body .rosace .item-6.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 1000ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body .rosace .item-7
+{
+    position: absolute;
+    transform-style: preserve-3D;
+}
+body .rosace .item-7.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 1200ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body .rosace .item-8
+{
+    position: absolute;
+    transform-style: preserve-3D;
+}
+body .rosace .item-8.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 1400ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body .rosace .item-9
+{
+    position: absolute;
+    transform-style: preserve-3D;
+}
+body .rosace .item-9.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 1600ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+body .rosace .item-10
+{
+    position: absolute;
+    transform-style: preserve-3D;
+}
+body .rosace .item-10.animate
+{
+    animation: rotating 5s linear infinite;
+    animation-delay: 1800ms;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
